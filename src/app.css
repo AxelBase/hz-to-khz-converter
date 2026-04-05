@@ -1,0 +1,77 @@
+/* src/app.css */
+:root {
+  --brand-primary: #1D334A; /* Ocean Blue */
+  --brand-accent: #344d67;  /* Lighter Ocean Blue for hovers */
+  --brand-success: #00b4d8; /* Bright Sea Blue for accents/success */
+  --brand-bg: #f4f7f9;
+  --text-main: #1D334A;
+  --text-muted: #5a7184;
+  --card-shadow: 0 20px 25px -5px rgba(29, 51, 74, 0.07), 0 10px 10px -5px rgba(29, 51, 74, 0.03);
+  --bubbly-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  /* Updated gradient to match the Ocean Blue palette */
+  background: radial-gradient(circle at top right, #ffffff 0%, #e9eff5 100%);
+  color: var(--text-main);
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Bubbly Card Style */
+.card {
+  border: none;
+  border-radius: 30px;
+  background: #ffffff;
+  box-shadow: var(--card-shadow);
+  transition: var(--bubbly-transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 40px -10px rgba(29, 51, 74, 0.12);
+}
+
+/* Smooth Inputs */
+.form-control {
+  border-radius: 15px;
+  border: 2px solid #e2e8f0;
+  padding: 12px 20px;
+  color: var(--brand-primary);
+  font-weight: 500;
+  transition: var(--bubbly-transition);
+}
+
+.form-control::placeholder {
+  color: #a0aec0;
+}
+
+.form-control:focus {
+  border-color: var(--brand-primary);
+  /* Ocean Blue glow effect */
+  box-shadow: 0 0 0 4px rgba(29, 51, 74, 0.1);
+  outline: none;
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Added utility for the bubbly text in Ocean Blue */
+.bubble-text-ocean {
+  background: linear-gradient(135deg, #1D334A 0%, #344d67 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
